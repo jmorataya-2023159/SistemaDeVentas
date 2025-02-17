@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "a9e243d7-b4e3-438d-b4c6-384959312dcf",
+		"name": "SistemaDeVentas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956979"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Pedro",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Armas",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "parmas@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Parmas-123",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "ADMIN",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Parmas",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2636/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Parmas",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Parmas-123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2636/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarUsuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2636/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Pedrito",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Armitas",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2636/update/67afb567aad59efa7423390b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"update",
+						"67afb567aad59efa7423390b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarUsuariosPorId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2636/list/67afb567aad59efa7423390b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"list",
+						"67afb567aad59efa7423390b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangePassword",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "currentPassword",
+							"value": "Parmas-123",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "Parmas-456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2636/change/67afb567aad59efa7423390b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"change",
+						"67afb567aad59efa7423390b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2636/delete/67afb9add135b1d1d02cb289",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"delete",
+						"67afb9add135b1d1d02cb289"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCategory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Higiene",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Productos de higiene",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2636/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListCategory",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2636/listC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"listC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindCategoryById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:2636/get/67afbc4af551554cb7cca044",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"get",
+						"67afbc4af551554cb7cca044"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCategory",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "Hola",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2636/updateC/67afbf58fa30caf020c7ae9f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"updateC",
+						"67afbf58fa30caf020c7ae9f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCategory",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjU2N2FhZDU5ZWZhNzQyMzM5MGIiLCJuYW1lIjoiUGVkcm8iLCJ1c2VybmFtZSI6IlBhcm1hcyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1Njg3MjUsImV4cCI6MTczOTgyNzkyNX0.PDzTQyWRpg4MwH0LiMtV_zRrMUPFY6dEr_greWr7HXo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2636/deleteC/67afbf58fa30caf020c7ae9f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2636",
+					"path": [
+						"deleteC",
+						"67afbf58fa30caf020c7ae9f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

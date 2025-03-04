@@ -4,7 +4,7 @@ const categorySchema = new Schema({
     description:{
         type:String,
         required: true,
-        maxlength: [50, `The description cannot be longer than 50 characters`]
+        minlength: [3, 'The description must be at least 3 characters long'],
     }
 },
     {versionKey: false}

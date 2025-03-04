@@ -1,9 +1,28 @@
-import User from '../src/user/user.model.js'
+import User from '../src/users/user.model.js'
+import Category from '../src/product_category/category.model.js'
 
-export const existUsername = async(username)=>{
-    const alredyUsername = await User.findOne({username})
-    if(alredyUsername){
-        console.error(`Username ${username} is alredy taken.`)
-        throw new Error(`Username ${username} is alredy taken.`)
+export const existEmail = async(email, user)=>{
+    const alreadyEmail = await User.findOne({email})
+    if(alreadyEmail && alreadyEmail._id != user.uid){
+        console.error(`Email ${email} is already taken`)
+        throw new Error(`Email ${email} is already taken`)
+    }
+}
+
+export const existUsername = async(username,user)=>{
+    const alreadyUsermame = await User.findOne({username})
+    if(alreadyUsermame && alreadyUsermame._id != user.uid){
+        console.error(`Username ${username} is already taken`)
+        throw new Error(`Email ${username} is already taken`)
+    }
+}
+
+export const objetctIdValid = async(objectId)=>{
+    if(!isValidObjectId(objectId)) throw new Error('Category is not a valid ObjectId')
+}
+
+export const notRequiredField = (field)=>{
+    if(field){
+        throw Error(`${field} is not required`)
     }
 }

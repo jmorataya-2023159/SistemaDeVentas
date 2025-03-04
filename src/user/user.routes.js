@@ -1,17 +1,28 @@
-import { Router } from "express"
-import { register, login, deleteUser, updateUser, listUsers, getUserById, changePassword} from "./user.controller.js"
-import { validateJwt } from "../middlewares/validate.jwt.js"
+import { Router } from 'express'
+import {
+    register,
+    login,
+    test,
+    getClient,
+    getUserById,
+    updatePass,
+    update,
+    deleteUser
+} from './user.controller.js'
+import { validateJwt } from '../../middlewares/validate.jwt.js'
 
 const api = Router()
 
-
 api.post('/register', register)
-api.post('/login',login)
-api.get('/list',[validateJwt],listUsers)
-api.get('/list/:id',[validateJwt],getUserById)
-api.put('/update/:id',[validateJwt], updateUser)
-api.put('/change/:id',[validateJwt],changePassword)
-api.delete('/delete/:id',[validateJwt],deleteUser)
+api.post('/login', login)
 
+api.get('/test', [validateJwt], test)
+
+//CRUD
+api.get('/', [validateJwt], getClient)
+api.get('/:id', [validateJwt], getUserById)
+api.put('/pass/:id', [validateJwt], updatePass)
+api.put('/:id', [validateJwt], update)
+api.delete('/:id',[validateJwt], deleteUser)
 
 export default api
